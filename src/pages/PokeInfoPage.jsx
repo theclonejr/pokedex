@@ -93,13 +93,9 @@ const PokeInfoPage = () => {
               {pokemon?.stats.map((tipo) => (
                 <div className="stat__container--bars">
                   <div className="stat__container">
-                    <h3 className="stat__name">{tipo.stat.name}</h3>
-                    <h3 className="stat__value">{tipo.base_stat}/150</h3>
-                  </div>
-                  <div className="bars__container">
-                    <div className="total">
-                      <div className={`progress n${tipo.base_stat}`}></div>
-                    </div>
+                    <label for="name" className="stat__name">{tipo.stat.name}</label>
+                    <label for="total" className="stat__value">{tipo.base_stat}/150</label>
+                      <progress className="bar" file="total" max="150" value={tipo.base_stat}></progress>
                   </div>
                 </div>
               ))}
